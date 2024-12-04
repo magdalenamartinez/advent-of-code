@@ -29,11 +29,16 @@ int study_numbers(char* buffer, int line_count)
         i++;
     }
 
-
-    int value = make_operation(left_array, right_array, leftCount, rightCount);
+    int value2 = second_operation(left_array, right_array, leftCount, rightCount);
+    int value1 = make_operation(left_array, right_array, leftCount, rightCount);
+   
+    printf ("ANSWER FIRST PART: %i\n", value1);
+    printf ("ANSWER SECOND PART: %i\n", value2);
+    
     free(left_array);
     free(right_array);
-    return value;
+    
+    return EXIT_SUCCESS;
 }
 
 int make_operation(int* left_array, int* right_array, int leftCount, int rightCount)
@@ -44,6 +49,26 @@ int make_operation(int* left_array, int* right_array, int leftCount, int rightCo
         value = value + abs(find_min(left_array, &leftCount) - find_min(right_array, &rightCount));
     }
     return value;
+}
+
+int second_operation(int* left_array, int* right_array, int leftCount, int rightCount)
+{
+    int value = 0;
+    for (int i = 0; i < leftCount; i++) {
+        value =  value + (left_array[i] * find_iterations(left_array[i], right_array, rightCount));
+    }
+    return value;
+}
+
+int find_iterations(int value, int* right_array, int rightCount)
+{
+    int counter = 0;
+    for (int i = 0; i < rightCount; i++) {
+        if (value == right_array[i]) {
+            counter++;
+        }
+    }
+    return counter;
 }
 
 int find_min(int* array, int* size)

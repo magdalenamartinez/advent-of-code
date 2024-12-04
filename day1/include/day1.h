@@ -13,5 +13,8 @@
     int find_min(int* array, int* size);
     size_t get_file_size(FILE* file);
     int make_operation(int* left_array, int* right_array, int leftCount, int rightCount);
+    int second_operation(int* left_array, int* right_array, int leftCount, int rightCount);
+    int find_iterations(int value, int* right_array, int rightCount);
+
 
 #endif /*MINES_GAMES_H*/
