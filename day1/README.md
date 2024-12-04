@@ -48,9 +48,7 @@ Your actual left and right lists contain many location IDs. What is the total di
 *(ANSWER: 2164381)*
 
 
-# Advent Of Code 2024
-
-## Day 2 ☃️
+### Second Part
 
 **-- Multiplying the Scores --**
 
