@@ -45,7 +45,7 @@ int study_numbers(char* buffer, int line_count)
     }
 
     int value = make_operation(row_num, row_lengths, line_count);
-    free_memory(row_num, line_count);
+    free_memory(row_num, row_lengths, line_count);
     return value;
 }
 
@@ -62,11 +62,8 @@ int make_operation(int** row_num, int* row_lengths, int line_counts)
     return counter;
 }
 
-int check_row(int* row_num, int size)
+int is_row_valid (int* row_num, int size)
 {
-    if (size < 2) {
-        return 0;
-    }
     int is_increasing = (row_num[1] > row_num[0]);
     for (int i = 1; i < size; i++) {
         if ((row_num[i] > row_num[i - 1]) != is_increasing) {
@@ -79,15 +76,48 @@ int check_row(int* row_num, int size)
     return 1;
 }
 
+int is_row_removable(int* row_num, int size, int index)
+{
+    if (size <= 2) return 0;
+
+    int temp[size - 1];
+    int k = 0;
+
+    for (int i = 0; i < size; i++) {
+        if (i != index) {
+            temp[k++] = row_num[i];
+        }
+    }
+
+    return is_row_valid(temp, size - 1);
+}
+
+int check_row(int* row_num, int size)
+{
+    if (size < 2) {
+        return 0;
+    }
+    if (is_row_valid(row_num, size)) {
+        return 1;
+    }
+    for (int i = 0; i < size; i++) {
+        if (is_row_removable(row_num, size, i)) {
+            return 1;
+        }
+    }
+    return 0;
+}
+
 int is_safe_dif(int dif) 
 {
     return dif >= 1 && dif <= 3;
 }
 
-void free_memory (int** row_num, int line_count)
+void free_memory (int** row_num, int *row_lengths, int line_count)
 {
     for (int r = 0; r < line_count; r++) {
         free(row_num[r]);
     }
     free(row_num);
+    free(row_lengths);
 }

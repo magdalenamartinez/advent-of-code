@@ -13,6 +13,8 @@
     size_t get_file_size(FILE* file);
     int check_row(int* row_num, int size);
     int make_operation(int** row_num, int* row_lengths, int line_counts);
+    void free_memory(int** row_num, int* row_lengths, int line_count);
     int is_safe_dif(int dif);
-    void free_memory (int** row_num, int line_count);
+    int is_row_valid (int* row_num, int size);
+    int is_row_removable(int* row_num, int size, int index);
 #endif /*DAY_2_H*/
