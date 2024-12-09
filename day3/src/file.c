@@ -9,7 +9,7 @@ int open_file(char* filename)
     }
     int line_count = 0;
     char *buffer = read_file(fd, &line_count);
-    return study_numbers(buffer, line_count);
+    return study_numbers(buffer);
 }
 
 char* read_file(FILE* fd, int *line_count)

@@ -22,6 +22,7 @@ Only the four highlighted sections are real mul instructions. Adding up the resu
 
 Scan the corrupted memory for uncorrupted mul instructions. What do you get if you add up all of the results of the multiplications?
 
+![alt text](image.png)
 
 **--- Part Two ---**
 
