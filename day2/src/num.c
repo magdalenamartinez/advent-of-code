@@ -8,7 +8,7 @@ int study_numbers(char* buffer, int line_count)
     int row = 0;
     int col = 0;
     int currentNumber = 0;
-
+ 
     row_num = malloc(sizeof(int*) * line_count);
     int* row_lengths = malloc(sizeof(int) * line_count);
     while (buffer[i] != '\0' && row < line_count) {
