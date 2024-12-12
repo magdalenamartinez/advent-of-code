@@ -45,9 +45,9 @@ To find the total distance between the left list and the right list, add up the 
 
 Your actual left and right lists contain many location IDs. What is the total distance between your lists?
 
-![alt text](AlbedoBase_XL_christmas_coding_2.jpg)
+<span style="color: orange;">*(ANSWER: 2164381)*</span>
 
-*(ANSWER: 2164381)*
+![alt text](AlbedoBase_XL_christmas_coding_2.jpg)
 
 
 ### Second Part
@@ -84,4 +84,5 @@ So, for these example lists, the similarity score at the end of this process is 
 
 Once again consider your left and right lists. What is their similarity score?
 
-*(ANSWER: 20719933)*
+<span style="color: orange;">*(ANSWER: 20719933)*</span>
+
