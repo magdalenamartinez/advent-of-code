@@ -5,52 +5,52 @@ int find_xmas(XmasArray* xmas_data)
 {
     for (int i = 0; i < xmas_data->nrows; i++) {
         for (int j = 0; j < xmas_data->ncols; j++) {
-            check_X(xmas_data, i, j);
+            xmas_data->counter += check_A(xmas_data, i, j);
         }
     }
     return xmas_data->counter;
 }
 
-void check_X(XmasArray* xmas_data, int i, int j)
+int check_A(XmasArray* xmas_data, int i, int j)
 {
-    if (xmas_data->array_xmas[i][j] == 'X') {
-        for (int k = 0; k < 8; k++) {
-            recursive_xmas(xmas_data, i, j, 0, k);
+    if (xmas_data->array_xmas[i][j] == 'A') {
+        return check_pattern(xmas_data, i, j);
+    }
+    return 0;
+}
+
+int check_pattern(XmasArray* xmas_data, int i, int j)
+{
+    if (i <=0 || j<=0 || i > xmas_data->nrows || j > xmas_data->ncols) {
+        return 0;
+    }
+    char value1_1 = xmas_data->array_xmas[i - 1][j - 1];
+    char value1_2 = xmas_data->array_xmas[i + 1][j + 1];
+    char value2_1 = xmas_data->array_xmas[i - 1][j + 1];
+    char value2_2 = xmas_data->array_xmas[i + 1][j - 1];
+
+    if (!isValid(value1_1, i - 1, j - 1, xmas_data) || !isValid(value1_2, i + 1, j + 1, xmas_data)) {
+        return 0;
+    }
+    if (!isValid(value2_1, i - 1, j + 1, xmas_data) || !isValid(value2_2, i + 1, j - 1, xmas_data)) {
+        return 0;
+    }
+
+    if (value1_1 != value1_2 && value2_1 != value2_2) {
+        return 1;
+    }
+
+    return 0;
+}
+
+int isValid(char value, int i, int j, XmasArray* xmas_data)
+{
+    if (i >=0 && j>=0 && i < xmas_data->nrows && j < xmas_data->ncols) {
+        if (value == 'M' || value == 'S') {
+            return 1;
         }
     }
-}
-
-void xmas_choose(int *i, int *j, int sentido)
-{
-    switch (sentido) {
-        case 0: (*i)--; break;
-        case 1: (*i)++; break;
-        case 2: (*j)--; break;
-        case 3: (*j)++; break;
-        case 4: (*i)--; (*j)--; break;
-        case 5: (*i)++; (*j)++; break;
-        case 6: (*i)--; (*j)++; break;
-        case 7: (*i)++; (*j)--; break;
-    }
-}
-
-char getValueChar(int value)
-{
-    const char *array = "XMAS";
-    return array[value];
-}
-
-void recursive_xmas(XmasArray* xmas_data, int i, int j, int letter, int sentido)
-{
-    xmas_choose(&i, &j, sentido);
-    if (isValid(i, j, xmas_data->nrows, xmas_data->ncols) &&
-        getValueChar(letter + 1) == xmas_data->array_xmas[i][j]) {
-        if (letter + 1 == 3) {
-            xmas_data->counter++;
-        } else {
-            recursive_xmas(xmas_data, i, j, letter + 1, sentido);
-        }
-    }
+    return 0;
 }
 
 void complete_xmas(XmasArray* xmas_data, int rows, int cols)

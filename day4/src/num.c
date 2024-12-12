@@ -32,13 +32,6 @@ int study_numbers(char* buffer, int line_count)
     return counter;
 }
 
-int isValid(int i, int j, int maxRows, int maxCols)
-{
-    if (i >=0 && j>=0 && i < maxRows && j < maxCols) {
-        return 1;
-    }
-    return 0;
-}
 
 void free_memory (char** array_xmas, int line_count)
 {

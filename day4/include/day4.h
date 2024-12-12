@@ -11,7 +11,7 @@
     size_t get_file_size(FILE* file);
     int study_numbers(char* buffer, int line_count);
     void free_memory (char** array_xmas, int line_count);
-    int isValid(int i, int j, int maxRows, int maxCols);
+    //int isValid(int i, int j, int maxRows, int maxCols);
     typedef struct {
         char** array_xmas;
         int ncols;        
@@ -21,9 +21,11 @@
     int find_xmas(XmasArray* xmas_data);
     void xmas_choose(int *i, int *j, int sentido);
     char getValueChar(int value);
-    int isValid(int i, int j, int maxRows, int maxCols);
     void recursive_xmas(XmasArray* xmas_data, int i, int j, int letter, int sentido);
     void remove_xmas(XmasArray* xmas_data, int i, int j, int sentido);
     void complete_xmas(XmasArray* xmas_data, int rows, int cols);
-    void check_X(XmasArray* xmas_data, int i, int j);
+    int check_A(XmasArray* xmas_data, int i, int j);
+    int isValid(char value, int i, int j, XmasArray* xmas_data);
+    int check_pattern(XmasArray* xmas_data, int i, int j);
+    void get_values(int *i, int *j, int k);
 #endif /*DAY_4_H*/
