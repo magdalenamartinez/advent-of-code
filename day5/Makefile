@@ -8,8 +8,10 @@ INCLUDE	=	-I ./include/
 
 SRC	= 	src/main.c	\
 		src/file.c	\
+		src/rules.c	\
+		src/sort.c	\
+		src/update.c	\
 		src/num.c	\
-		src/xmas.c	\
 
 	
 
