@@ -33,5 +33,9 @@
     void set_mem_elements(char* buffer, int i, updates_t* updates);
     int compare_positions(int n_upd, updates_t* updates, int num_rules, int** rules);
     int get_num_rules(char* buffer, int* i);
+    int set_correct(updates_t* updates, int i, int num_rules, int** rules);
+    int change_pos(int num, updates_t *updates, int i, int* k);
+    int get_middle(updates_t* updates, int i);
+    void swipe_pos(updates_t* updates, int i, int p1, int p2);
 
 #endif /*DAY_5_H*/

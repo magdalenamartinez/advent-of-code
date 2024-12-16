@@ -12,6 +12,7 @@ SRC	= 	src/main.c	\
 		src/sort.c	\
 		src/update.c	\
 		src/num.c	\
+		src/secondpart.c	\
 
 	
 

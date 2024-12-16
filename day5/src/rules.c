@@ -51,7 +51,7 @@ int get_num_rules(char* buffer, int* i)
     }
     return num_rules;
 }
-
+/*
 int compare_positions(int n_upd, updates_t* updates, int num_rules, int** rules)
 {
     int found = 0, counter = 0, j = 0;
@@ -76,4 +76,4 @@ int compare_positions(int n_upd, updates_t* updates, int num_rules, int** rules)
         }
     }
     return counter;
-}
+}*/
