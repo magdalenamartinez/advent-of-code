@@ -6,3 +6,4 @@
 3. [Day 3 -  Mull It Over 🎄](/day3/README.md)
 3. [Day 4 -  Ceres Search 🎅🏻](/day4/README.md)
 3. [Day 5 -  Print Queue 🎁](/day5/README.md)
+3. [Day 6 - Guard Gallivant 🧑🏼‍🎄](/day6/README.md)
