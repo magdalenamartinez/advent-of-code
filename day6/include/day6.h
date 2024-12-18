@@ -36,4 +36,9 @@
     void alloc_array(map_t* map, char* buffer);
     void free_memory(map_t* map);
 
+
+
+void check_others(map_t* map, int i, int j);
+    
+
 #endif /*DAY_6_H*/
