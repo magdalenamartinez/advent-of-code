@@ -107,6 +107,8 @@ Predict the path of the guard. How many distinct positions will the guard visit 
 
 <span style="color: orange;">*(ANSWER: 5409)*</span>
 
+![Santa](/image.jpg)
+
 **--- Part Two ---**
 
 While The Historians begin working around the guard's patrol route, you borrow their fancy device and step outside the lab. From the safety of a supply closet, you time travel through the last few months and record the nightly status of the lab's guard post on the walls of the closet.
@@ -204,4 +206,4 @@ It doesn't really matter what you choose to use as an obstacle so long as you an
 You need to get the guard stuck in a loop by adding a single new obstruction. How many different positions could you choose for this obstruction?
 
 
-<span style="color: orange;">*(ANSWER: ????)*</span>
+<span style="color: orange;">*(ANSWER: 2022)*</span>
