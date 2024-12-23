@@ -1,7 +1,6 @@
 #include "../include/day7.h"
 
-
-int open_file(char* filename) 
+long long open_file(char* filename) 
 {
     FILE *fd = fopen(filename, "r");
     if (fd == NULL) {
