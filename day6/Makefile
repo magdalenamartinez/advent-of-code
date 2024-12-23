@@ -10,7 +10,10 @@ SRC	= 	src/main.c	\
 		src/file.c	\
 		src/num.c	\
 		src/memory.c	\
+		src/utilities.c	\
 		src/guard.c	\
+		src/copy_map.c	\
+		src/loops.c	\
 
 OBJ	=	$(SRC:.c=.o)
 

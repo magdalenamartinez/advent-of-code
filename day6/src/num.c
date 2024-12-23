@@ -2,18 +2,14 @@
 
 int study_numbers(char* buffer, int line_count)
 {
-    int counter = 0;
-    map_t* map = alloc_map(buffer);
-    move_guard(map);
-    
-    for (int i = 0; i < map->rows; i++) {
-        for (int j = 0; j < map->cols; j++) {
-            if (map->visited[i][j] == 'v') {
-                counter++;
-            }
-        }
-    }
-    
+    int second_part = 0;
+    map_t* map = alloc_memory(buffer, line_count);
+    alloc_visited(map, buffer);
+    int first_part = move_guard(map);
+    second_part = check_loops(map);
+    printf("First Part: %i, Second Part: %i", first_part, second_part);
     free_memory(map);
-    return counter;
+    return second_part;
 }
+
+

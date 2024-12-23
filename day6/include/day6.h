@@ -5,15 +5,28 @@
     #include <stdlib.h>    
     #include <ctype.h>    
     #define BUFFER_SIZE 1024
+    #define UP 1
+    #define RIGHT 2
+    #define DOWN 3
+    #define LEFT 4
    
+    /*Visited Struct*/
+    typedef struct visited {
+        int dir;
+        int value;
+    } visited_t;
+    
     /*Map Struct*/
     typedef struct map{
-        char** array;
-        char** visited;
+        char** map;
+        visited_t** visited;
         int rows;
         int cols;
-        int guard_i;
-        int guard_j;
+        int guard_x;
+        int guard_x_origin;
+        int guard_y_origin;
+        int guard_y;
+        char init_char;
     } map_t;
     
     /*file.c -> Functions to manipulate the file*/
@@ -24,21 +37,30 @@
     
     /*num.c Principal Function*/
     int study_numbers(char* buffer, int line_count);
+    map_t* copy_map(map_t* original);
+    int try_loop(int i_obs, int j_obs, map_t* original);
+    int check_loops(map_t* map);
+
+    /*utilities.c*/
+    void rotate_guard(map_t* map);
+    void get_next_pos(map_t* map, int* i, int* j, int *dir);
+    int is_out(map_t* map, int next_x, int next_y);
+    int is_guard(char a);
 
     /*guard.c -> Guard Functions*/
-    void rotate_guard(map_t* map);
-    void move_guard(map_t* map);
-    void get_next_pos(map_t* map, int* i, int* j);
-    void move_one(map_t* map, int next_i, int next_j, int i, int j);
+    int move_guard(map_t* map);
+    void move_one(map_t* map, int next_x, int next_y, int i, int j);
 
     /*memory.c -> Memory Functions*/
-    map_t* alloc_map(char* buffer);
-    void alloc_array(map_t* map, char* buffer);
     void free_memory(map_t* map);
+    map_t* alloc_memory(char* buffer, int line_count);
+    void alloc_visited(map_t* map, char* buffer);
+    void alloc_array(map_t* map, char* buffer);
 
-
-
-void check_others(map_t* map, int i, int j);
-    
+    /*copy_map.c -> Copy Map Functions*/
+    void change_guard_position(map_t* original, map_t* new_map, int i, int j);
+    void copy_array(map_t* original, map_t* new_map);
+    void copy_visited(map_t* original, map_t* new_map);
+    map_t* copy_map(map_t* original);
 
 #endif /*DAY_6_H*/

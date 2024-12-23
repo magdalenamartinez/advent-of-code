@@ -1,53 +1,37 @@
 #include "../include/day6.h"
 
-void move_guard(map_t* map) 
+void move_one(map_t* map, int next_x, int next_y, int i, int j)
 {
-    int end = 0;
-    int i = map->guard_i, j = map->guard_j; 
+    map->map[next_x][next_y] = map->map[i][j];
+    map->map[i][j] = '.';
+    map->guard_x = next_x;
+    map->guard_y = next_y;
+}
 
+int move_guard(map_t* map)
+{
+    int dir = 0, end = 0, counter = 1, rotations = 0;
+    int i = map->guard_x, j = map->guard_y;
     while (!end) {
-        int next_i = i, next_j = j;
-        get_next_pos(map, &next_i, &next_j);
-
-        if (next_i < 0 || next_i >= map->rows || next_j < 0 || next_j >= map->cols) {
+        int next_x = i, next_y = j;
+        get_next_pos(map, &next_x, &next_y, &dir);
+        if (is_out(map, next_x, next_y)){
             end = 1;
-        } else if (map->array[next_i][next_j] == '#') {
+        } else if (map->map[next_x][next_y] == '#'){
             rotate_guard(map);
+            if (rotations > 3) {
+                exit(EXIT_FAILURE);
+            } 
+            rotations++;
         } else {
-            move_one(map, next_i, next_j, i, j);
-            map->visited[i][j] = 'v';
-            i = next_i, j = next_j;
+            rotations = 0;
+            move_one(map, next_x, next_y, i, j);
+            if (map->visited[next_x][next_y].value == 0) {
+                counter++;
+                map->visited[next_x][next_y].value = 1;
+            } 
+            i = next_x; j = next_y;
         }
-
-    }
-}
-
-void rotate_guard(map_t* map)
-{
-    switch (map->array[map->guard_i][map->guard_j])
-    {
-        case '^': map->array[map->guard_i][map->guard_j] = '>'; break;
-        case '>': map->array[map->guard_i][map->guard_j] = 'v'; break;
-        case 'v': map->array[map->guard_i][map->guard_j] = '<'; break;
-        case '<': map->array[map->guard_i][map->guard_j] = '^'; break;
-    }
-}
-
-void move_one(map_t* map, int next_i, int next_j, int i, int j)
-{
-    map->array[next_i][next_j] = map->array[i][j];
-    map->array[i][j] = '.';
-    map->guard_i = next_i;
-    map->guard_j = next_j;
-}
-
-void get_next_pos(map_t* map, int* i, int* j)
-{
-    switch (map->array[map->guard_i][map->guard_j])
-    {
-        case '^': (*i)--; break;
-        case '>': (*j)++; break;
-        case 'v': (*i)++; break;
-        case '<': (*j)--; break;
-    }
+    } 
+    return counter;
 }
