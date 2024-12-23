@@ -107,7 +107,7 @@ Predict the path of the guard. How many distinct positions will the guard visit 
 
 <span style="color: orange;">*(ANSWER: 5409)*</span>
 
-![Santa](/image.jpg)
+![Santa](image.jpg)
 
 **--- Part Two ---**
 
