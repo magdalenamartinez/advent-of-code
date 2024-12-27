@@ -57,7 +57,8 @@
     /*antinodes.c*/
     void get_antinodes_frequency(general_t* general, int freq);
     int get_antinodes(general_t* general);
-    void try_antinode(general_t* general, int x, int y, int freq);
+    //void try_antinode(general_t* general, int x, int y, int freq); //First Part
+    void try_antinode(general_t* general, int x, int difX, int y, int difY, int freq);
 
 
 #endif /*DAY_8_H*/

@@ -11,7 +11,7 @@ SRC	= 	src/main.c	\
 		src/numbers.c	\
 		src/memory.c	\
 		src/utilities.c	\
-		src/antinodes.c	\
+		src/antinodes2.c	\
 
 OBJ	=	$(SRC:.c=.o)
 
