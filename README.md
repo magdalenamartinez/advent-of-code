@@ -9,3 +9,4 @@
 6. [Day 6 - Guard Gallivant 🧑🏼‍🎄](/day6/README.md)
 7. [Day 7 - Bridge Repair 🌟](/day7/README.md)
 8. [Day 8 - Resonant Collinearity 🫧](/day8/README.md)
+9. [Day 9 - Disk Fragmenter 🦌](/day9/README.md)
