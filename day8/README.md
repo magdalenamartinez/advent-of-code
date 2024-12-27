@@ -85,6 +85,8 @@ Calculate the impact of the signal. How many unique locations within the bounds 
 
 <span style="color: orange;">*(ANSWER: 305)*</span>
 
+![Santa Claus image]("image.jpeg")
+
 **--- Part Two ---**
 
 Watching over your shoulder as you work, one of The Historians asks if you took the effects of resonant harmonics into your calculations.
@@ -125,4 +127,4 @@ The original example now has 34 antinodes, including the antinodes that appear o
 ```
 Calculate the impact of the signal using this updated model. How many unique locations within the bounds of the map contain an antinode?
 
-<span style="color: orange;">*(ANSWER: )*</span>
+<span style="color: orange;">*(ANSWER: 1150)*</span>
