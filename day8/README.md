@@ -85,7 +85,7 @@ Calculate the impact of the signal. How many unique locations within the bounds 
 
 <span style="color: orange;">*(ANSWER: 305)*</span>
 
-![Santa Claus image]("image.jpeg")
+![Santa Claus image](image.jpeg)
 
 **--- Part Two ---**
 
