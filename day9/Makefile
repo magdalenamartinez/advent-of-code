@@ -9,6 +9,8 @@ INCLUDE	=	-I ./include/
 SRC	= 	src/main.c	\
 		src/file.c	\
 		src/numbers.c	\
+		src/memory.c	\
+		src/array.c	\
 
 OBJ	=	$(SRC:.c=.o)
 

@@ -27,8 +27,15 @@
     /*numbers.c*/
     long long study_numbers(char* buffer, int line_count);
 
- 
+    /*memory.c*/
+    disk_t* alloc_disk(char* buffer);
+    void read_disk(char* buffer, disk_t* disk);
+    size_t get_total_size(disk_t* disk);
 
+    /*array.c*/
+    int* get_array(size_t total_size, disk_t* disk, int* pos);
+    void swap_pos(int* array, int first_pos, int last_pos);
+    void sort_array(int pos, int* array);
 
 
 #endif /*DAY_9_H*/
