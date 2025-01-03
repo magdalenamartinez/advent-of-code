@@ -34,8 +34,9 @@
 
     /*array.c*/
     int* get_array(size_t total_size, disk_t* disk, int* pos);
-    void swap_pos(int* array, int first_pos, int last_pos);
-    void sort_array(int pos, int* array);
+    void swap_pos(int* array, int first_pos, int last_pos, int counter);
+    void sort_array(int pos, int* array, disk_t* disk);
+    void set_num(int* array, int numBefore, int length, int numToMove, int last);
 
 
 #endif /*DAY_9_H*/

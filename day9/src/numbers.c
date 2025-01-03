@@ -8,10 +8,12 @@ long long study_numbers(char* buffer, int line_count)
     disk_t* disk = alloc_disk(buffer);
     size_t total_size = get_total_size(disk);
     int* array = get_array(total_size, disk, &pos);
-    sort_array(pos, array);
+    sort_array(pos, array, disk);
    
-    while (array[i] != -1 && i < pos) {
-        counter += ((array[i]) * i);
+    while (i < pos) {
+        if (array[i] != -1) {
+            counter += ((array[i]) * i);
+        }
         i++;
     }
     return counter;

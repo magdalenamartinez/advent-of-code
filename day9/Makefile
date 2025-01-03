@@ -10,7 +10,10 @@ SRC	= 	src/main.c	\
 		src/file.c	\
 		src/numbers.c	\
 		src/memory.c	\
-		src/array.c	\
+		src/secondpart.c	\
+		
+		
+#change this one for array.c to get the first part instead of the second
 
 OBJ	=	$(SRC:.c=.o)
 
