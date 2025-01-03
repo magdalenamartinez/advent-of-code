@@ -10,3 +10,4 @@
 7. [Day 7 - Bridge Repair 🌟](/day7/README.md)
 8. [Day 8 - Resonant Collinearity 🫧](/day8/README.md)
 9. [Day 9 - Disk Fragmenter 🦌](/day9/README.md)
+10. [Day 10 - Hoof It 🎊](/day10/README.md)
